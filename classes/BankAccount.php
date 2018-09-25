@@ -34,13 +34,8 @@ class BankAccount implements IfaceBankAccount
 
     public function transfer(Money $amount, BankAccount $account)
     {
-        //implement this method
-        $user_blnc = eval('return '.$account->balance.';');
-
-        $user_trns = eval('return '.$amount->value().';');
-
+        // To transfer first withdraw from myBankAccount & then add the withdraw amount to the yourBankAccount
         $this->withdraw($amount);
-
-        $account->balance= $user_blnc+$user_trns;
+        $account->balance=new Money($account->balance()->value()+$amount->value());
     }
 }
