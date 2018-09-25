@@ -48,5 +48,12 @@ class BankAccount implements IfaceBankAccount
     public function transfer(Money $amount, BankAccount $account)
     {
         //implement this method
+        $user_blnc = eval('return '.$account->balance.';');
+
+        $user_trns = eval('return '.$amount->value().';');
+
+        $this->withdraw($amount);
+
+        $account->balance= $user_blnc+$user_trns;
     }
 }
