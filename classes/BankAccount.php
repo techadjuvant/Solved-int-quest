@@ -18,6 +18,15 @@ class BankAccount implements IfaceBankAccount
     public function deposit(Money $amount)
     {
         //implement this method
+        $user_blnc = $this->balance;
+
+        $user_dpst = $amount->value();
+
+        $str_sum ="$user_blnc+$user_dpst";
+
+        $balance = eval('return '.$str_sum.';');
+
+        return $this->balance = $balance;
     }
 
     public function withdraw(Money $amount)
