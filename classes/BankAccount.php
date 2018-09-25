@@ -20,6 +20,12 @@ class BankAccount implements IfaceBankAccount
         //implement this method
     }
 
+    public function withdraw(Money $amount)
+    {
+        
+    }
+
+
     public function transfer(Money $amount, BankAccount $account)
     {
         //implement this method
